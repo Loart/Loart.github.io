@@ -23,14 +23,17 @@ body {
 
 /* Adjust grid item width and height */
 .grid-item {
-    width: 80%; /* Each item will take 100% width of its grid cell */
-    height: 90%; /* Each item will take 100% height of its grid cell */
+    width: 80px; /* Set the width */
+    height: 80px; /* Set the height */
     border: 3px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     cursor: pointer;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis when text overflows */
 }
 
 .hints {
