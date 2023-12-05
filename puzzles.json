@@ -22,5 +22,125 @@
             "Hint 1 for Puzzle 1",
             "Hint 2 for Puzzle 1"
         ]
+    },
+     {
+        "name": "Puzzle 2",
+        "data": [
+            [
+                { "color": "blue", "symbol": "A" },
+                { "color": "green", "symbol": "B" },
+                { "color": "red", "symbol": "C" }
+            ],
+            [
+                { "color": "blue", "symbol": "B" },
+                { "color": "green", "symbol": "C" },
+                { "color": "red", "symbol": "A" }
+            ],
+            [
+                { "color": "blue", "symbol": "C" },
+                { "color": "green", "symbol": "A" },
+                { "color": "red", "symbol": "B" }
+            ]
+        ],
+        "hints": [
+            "Hint 1 for Puzzle 2",
+            "Hint 2 for Puzzle 2"
+        ]
+    },
+    {
+        "name": "Puzzle 3",
+        "data": [
+            [
+                { "color": "green", "symbol": "B" },
+                { "color": "red", "symbol": "C" },
+                { "color": "blue", "symbol": "A" }
+            ],
+            [
+                { "color": "green", "symbol": "C" },
+                { "color": "red", "symbol": "A" },
+                { "color": "blue", "symbol": "B" }
+            ],
+            [
+                { "color": "green", "symbol": "A" },
+                { "color": "red", "symbol": "B" },
+                { "color": "blue", "symbol": "C" }
+            ]
+        ],
+        "hints": [
+            "Hint 1 for Puzzle 3",
+            "Hint 2 for Puzzle 3"
+        ]
+    },
+    {
+        "name": "Puzzle 4",
+        "data": [
+            [
+                { "color": "red", "symbol": "A" },
+                { "color": "blue", "symbol": "C" },
+                { "color": "green", "symbol": "B" }
+            ],
+            [
+                { "color": "red", "symbol": "C" },
+                { "color": "blue", "symbol": "B" },
+                { "color": "green", "symbol": "A" }
+            ],
+            [
+                { "color": "red", "symbol": "B" },
+                { "color": "blue", "symbol": "A" },
+                { "color": "green", "symbol": "C" }
+            ]
+        ],
+        "hints": [
+            "Hint 1 for Puzzle 4",
+            "Hint 2 for Puzzle 4"
+        ]
+    },
+    {
+        "name": "Puzzle 5",
+        "data": [
+            [
+                { "color": "blue", "symbol": "C" },
+                { "color": "green", "symbol": "A" },
+                { "color": "red", "symbol": "B" }
+            ],
+            [
+                { "color": "blue", "symbol": "A" },
+                { "color": "green", "symbol": "B" },
+                { "color": "red", "symbol": "C" }
+            ],
+            [
+                { "color": "blue", "symbol": "B" },
+                { "color": "green", "symbol": "C" },
+                { "color": "red", "symbol": "A" }
+            ]
+        ],
+        "hints": [
+            "Hint 1 for Puzzle 5",
+            "Hint 2 for Puzzle 5"
+        ]
+    },
+    {
+        "name": "Puzzle 6",
+        "data": [
+            [
+                { "color": "green", "symbol": "C" },
+                { "color": "red", "symbol": "B" },
+                { "color": "blue", "symbol": "A" }
+            ],
+            [
+                { "color": "green", "symbol": "B" },
+                { "color": "red", "symbol": "A" },
+                { "color": "blue", "symbol": "C" }
+            ],
+            [
+                { "color": "green", "symbol": "A" },
+                { "color": "red", "symbol": "C" },
+                { "color": "blue", "symbol": "B" }
+            ]
+        ],
+        "hints": [
+            "Hint 1 for Puzzle 6",
+            "Hint 2 for Puzzle 6"
+        ]
     }
 ]
