@@ -28,6 +28,7 @@ LETTERS.forEach(letter => createButton(letter, 'letter'));
 function createButton(value, type) {
     const btn = document.createElement('button');
     btn.textContent = value;
+    btn.title = value; // Add this line
     btn.classList.add(`${type}-btn`);
     btn.dataset[type] = value;
     btn.addEventListener('click', () => handleButtonClick(btn, type, value));
