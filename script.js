@@ -1,14 +1,6 @@
 // Define constants for elements 
-const ELEMENTS = {
-    gridContainer: document.getElementById('gridContainer'),
-    checkSolutionBtn: document.getElementById('checkSolutionBtn'),
-    resultMessage: document.getElementById('resultMessage'),
-    randomPuzzleBtn: document.getElementById('randomPuzzleBtn'),
-    colorButtonContainer: document.getElementById('colorButtonContainer'),
-    letterButtonContainer: document.getElementById('letterButtonContainer'),
-    clearCellBtn: document.getElementById('clearCellBtn'),
-	clearAllBtn: document.getElementById('clearAllBtn')
-};
+const ELEMENTS = ['gridContainer', 'checkSolutionBtn', 'resultMessage', 'randomPuzzleBtn', 'colorButtonContainer', 'letterButtonContainer', 'clearCellBtn', 'clearAllBtn']
+    .reduce((acc, id) => ({ ...acc, [id]: document.getElementById(id) }), {});
 
 // Define state variables
 let state = {
@@ -30,54 +22,35 @@ COLORS.forEach(color => state.colorCount[color] = 0);
 LETTERS.forEach(letter => state.letterCount[letter] = 0);
 
 // Create buttons for selecting colors
-COLORS.forEach(color => {
-    const colorBtn = document.createElement('button');
-    colorBtn.textContent = color;
-    colorBtn.classList.add('color-btn');
-    colorBtn.dataset.color = color;
-    colorBtn.addEventListener('click', () => {
-        if (state.selectedColor === color) {
-            state.selectedColor = ''; // Unselect the color
-            colorBtn.style.backgroundColor = ''; // Change the background color back to normal
-        } else if (state.colorCount[color] < 3) {
-            // Unselect the previously selected color button
-            if (state.selectedColor) {
-                const prevColorBtn = document.querySelector(`.color-btn[data-color="${state.selectedColor}"]`);
-                if (prevColorBtn) prevColorBtn.style.backgroundColor = '';
-            }
-            state.selectedColor = color; // Set the selected color here
-            colorBtn.style.backgroundColor = 'black'; // Change the background color to black
-        } else {
-            console.log('Maximum limit for this color reached');
-        }
-    });
-    ELEMENTS.colorButtonContainer.appendChild(colorBtn);
-});
+COLORS.forEach(color => createButton(color, 'color'));
+LETTERS.forEach(letter => createButton(letter, 'letter'));
 
-// Create buttons for selecting letters
-LETTERS.forEach(letter => {
-    const letterBtn = document.createElement('button');
-    letterBtn.textContent = letter;
-    letterBtn.classList.add('letter-btn');
-    letterBtn.dataset.letter = letter; // Set the data-letter attribute here
-    letterBtn.addEventListener('click', () => {
-        if (state.selectedLetter === letter) {
-            state.selectedLetter = ''; // Unselect the letter
-            letterBtn.style.backgroundColor = ''; // Change the background color back to normal
-        } else if (state.letterCount[letter] < 3) {
-            // Unselect the previously selected letter button
-            if (state.selectedLetter) {
-                const prevLetterBtn = document.querySelector(`.letter-btn[data-letter="${state.selectedLetter}"]`);
-                if (prevLetterBtn) prevLetterBtn.style.backgroundColor = '';
-            }
-            state.selectedLetter = letter; // Set the selected letter here
-            letterBtn.style.backgroundColor = 'black'; // Change the background color to black
-        } else {
-            console.log('Maximum limit for this letter reached');
+function createButton(value, type) {
+    const btn = document.createElement('button');
+    btn.textContent = value;
+    btn.classList.add(`${type}-btn`);
+    btn.dataset[type] = value;
+    btn.addEventListener('click', () => handleButtonClick(btn, type, value));
+    ELEMENTS[`${type}ButtonContainer`].appendChild(btn);
+}
+
+function handleButtonClick(btn, type, value) {
+    const selectedType = `selected${type.charAt(0).toUpperCase() + type.slice(1)}`;
+    if (state[selectedType] === value) {
+        state[selectedType] = ''; // Unselect the type
+        btn.style.backgroundColor = ''; // Change the background color back to normal
+    } else if (state[`${type}Count`][value] < 3) {
+        // Unselect the previously selected type button
+        if (state[selectedType]) {
+            const prevBtn = document.querySelector(`.${type}-btn[data-${type}="${state[selectedType]}"]`);
+            if (prevBtn) prevBtn.style.backgroundColor = '';
         }
-    });
-    ELEMENTS.letterButtonContainer.appendChild(letterBtn);
-});
+        state[selectedType] = value; // Set the selected type here
+        btn.style.backgroundColor = 'black'; // Change the background color to black
+    } else {
+        console.log(`Maximum limit for this ${type} reached`);
+    }
+}
 
 // Define puzzles
 let PUZZLES = [];
