@@ -19,8 +19,10 @@
             ]
         ],
         "hints": [
-            "Hint 1 for Puzzle 1",
-            "Hint 2 for Puzzle 1"
+            "Top left is Red.",
+            "Center is a Blue A, Next to it is Blue.",
+            "Bottom left is an A",
+            "Bottom Right is Green B, above it is C"
         ]
     }
 ]
