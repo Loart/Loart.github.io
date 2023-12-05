@@ -118,6 +118,15 @@ function generateGridFromPuzzle(puzzleData) {
             currentRowContainer.appendChild(gridItem);
         }
     }
+
+    // Display hints
+    const hintContainer = document.getElementById('hintContainer'); // Assuming you have a container for hints
+    hintContainer.innerHTML = ''; // Clear previous hints
+    puzzleData.hints.forEach(hint => { // Assuming each puzzle has a 'hints' property which is an array of strings
+        const hintElement = document.createElement('p');
+        hintElement.textContent = hint;
+        hintContainer.appendChild(hintElement);
+    });
 }
 
 // Event listener for clear cell button click
