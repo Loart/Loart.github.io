@@ -82,7 +82,7 @@ LETTERS.forEach(letter => {
 // Define puzzles
 let PUZZLES = [];
 
-fetch('./puzzles.json')
+fetch('puzzles.json')
     .then(response => response.json())
     .then(data => {
         PUZZLES = data;
