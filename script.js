@@ -120,10 +120,10 @@ function generateGridFromPuzzle(puzzleData) {
     }
 
     // Display hints
-    const hintContainer = document.getElementById('hintContainer'); // Assuming you have a container for hints
+    const hintContainer = document.getElementById('hintsList'); // Use the hintsList as the container for hints
     hintContainer.innerHTML = ''; // Clear previous hints
     puzzleData.hints.forEach(hint => { // Assuming each puzzle has a 'hints' property which is an array of strings
-        const hintElement = document.createElement('p');
+        const hintElement = document.createElement('li');
         hintElement.textContent = hint;
         hintContainer.appendChild(hintElement);
     });
