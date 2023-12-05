@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Puzzle 1",
+        "data": [
+            [
+                { "color": "red", "symbol": "C" },
+                { "color": "blue", "symbol": "B" },
+                { "color": "green", "symbol": "A" }
+            ],
+            [
+                { "color": "red", "symbol": "B" },
+                { "color": "blue", "symbol": "A" },
+                { "color": "green", "symbol": "C" }
+            ],
+            [
+                { "color": "red", "symbol": "A" },
+                { "color": "blue", "symbol": "C" },
+                { "color": "green", "symbol": "B" }
+            ]
+        ],
+        "hints": [
+            "Hint 1 for Puzzle 1",
+            "Hint 2 for Puzzle 1"
+        ]
+    }
+    // Add more puzzles...
+]
