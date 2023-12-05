@@ -1,4 +1,4 @@
-// Define constants for elements
+// Define constants for elements 
 const ELEMENTS = {
     gridContainer: document.getElementById('gridContainer'),
     checkSolutionBtn: document.getElementById('checkSolutionBtn'),
