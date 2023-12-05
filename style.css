@@ -23,8 +23,8 @@ body {
 
 /* Adjust grid item width and height */
 .grid-item {
-    width: 100%; /* Each item will take 100% width of its grid cell */
-    height: 100%; /* Each item will take 100% height of its grid cell */
+    width: 320px; /* Each item will take 100% width of its grid cell */
+    height: 320px; /* Each item will take 100% height of its grid cell */
     border: 3px solid #ccc;
     display: flex;
     justify-content: center;
