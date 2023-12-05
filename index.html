@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color-Symbol Grid Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="container">
+        <h1>Color-Symbol Grid Puzzle</h1>
+        <div class="grid-container" id="gridContainer">
+            <!-- The grid will be dynamically generated here -->
+        </div>		
+		<div id="colorButtonContainer"></div>
+		<div id="letterButtonContainer"></div>
+		<button id="clearCellBtn">Clear Cell</button>
+		<button id="clearAllBtn">Clear All</button>
+        <div class="hints">
+            <h2>Hints:</h2>
+            <ul id="hintsList">
+                <!-- Hints will be dynamically displayed here -->
+            </ul>
+        </div>
+
+        <button id="checkSolutionBtn">Check Solution</button>
+        <button id="randomPuzzleBtn">Random Puzzle</button>
+        <p id="resultMessage"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
