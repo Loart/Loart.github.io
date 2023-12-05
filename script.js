@@ -178,26 +178,26 @@ function handleGridClick(event) {
     log('Handling grid click');
     const clickedCell = event.target;
 	
-	// If the clearCellNextClick flag is set, clear the cell and unset the flag
-	if (state.clearCellNextClick) {
-		if (clickedCell.style.backgroundColor !== 'white') {
-			state.colorCount[clickedCell.style.backgroundColor]--;
-			if (clickedCell.innerHTML.trim() !== '') {
-				state.letterCount[clickedCell.innerHTML.trim()]--;
-				// Remove the combination from the usedCombinations set
-				const combination = `${clickedCell.style.backgroundColor} ${clickedCell.innerHTML.trim()}`;
-				state.usedCombinations.delete(combination);
-			}
-		}
-		clickedCell.style.backgroundColor = 'white';
-		clickedCell.innerHTML = '';
-		state.clearCellNextClick = false;
+    // If the clearCellNextClick flag is set, clear the cell and unset the flag
+    if (state.clearCellNextClick) {
+        if (clickedCell.style.backgroundColor !== 'white') {
+            state.colorCount[clickedCell.style.backgroundColor]--;
+            if (clickedCell.innerHTML.trim() !== '') {
+                state.letterCount[clickedCell.innerHTML.trim()]--;
+                // Remove the combination from the usedCombinations set
+                const combination = `${clickedCell.style.backgroundColor} ${clickedCell.innerHTML.trim()}`;
+                state.usedCombinations.delete(combination);
+            }
+        }
+        clickedCell.style.backgroundColor = 'white';
+        clickedCell.innerHTML = '';
+        state.clearCellNextClick = false;
 
-		// Unhighlight the Clear Cell button
-		ELEMENTS.clearCellBtn.style.backgroundColor = '';
+        // Unhighlight the Clear Cell button
+        ELEMENTS.clearCellBtn.style.backgroundColor = '';
 
-		return;
-	}
+        return;
+    }
 
     const currentColor = state.selectedColor || clickedCell.style.backgroundColor;
     const currentLetter = state.selectedLetter || clickedCell.innerHTML.trim();
@@ -230,6 +230,13 @@ function handleGridClick(event) {
 
         clickedCell.style.backgroundColor = currentColor;
         state.colorCount[currentColor]++;
+
+        // If the count for the color has reached 3, unselect the color button
+        if (state.colorCount[currentColor] === 3) {
+            const colorBtn = document.querySelector(`.color-btn[data-color="${currentColor}"]`);
+            if (colorBtn) colorBtn.style.backgroundColor = '';
+            state.selectedColor = '';
+        }
     }
     if (state.selectedLetter && state.letterCount[currentLetter] < 3) {
         // If the cell already has a letter, decrement the count for that letter
@@ -239,6 +246,13 @@ function handleGridClick(event) {
 
         clickedCell.innerHTML = currentLetter;
         state.letterCount[currentLetter]++;
+
+        // If the count for the letter has reached 3, unselect the letter button
+        if (state.letterCount[currentLetter] === 3) {
+            const letterBtn = document.querySelector(`.letter-btn[data-letter="${currentLetter}"]`);
+            if (letterBtn) letterBtn.style.backgroundColor = '';
+            state.selectedLetter = '';
+        }
     }
 }
 
