@@ -18,7 +18,7 @@ body {
     grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
     grid-template-rows: repeat(3, 1fr); /* Three rows with equal height */
     gap: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 7px;
 }
 
 /* Adjust grid item width and height */
