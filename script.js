@@ -219,6 +219,7 @@ function handleGridClick(event) {
         }
 
         clickedCell.innerHTML = currentLetter;
+	clickedCell.title = currentLetter;
         state.letterCount[currentLetter]++;
 
         // If the count for the letter has reached 3, unselect the letter button
