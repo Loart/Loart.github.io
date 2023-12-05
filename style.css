@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+}
+
+.container {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    grid-template-rows: repeat(3, 1fr); /* Three rows with equal height */
+    gap: 1px;
+    margin-bottom: 20px;
+}
+
+/* Adjust grid item width and height */
+.grid-item {
+    width: 100%; /* Each item will take 100% width of its grid cell */
+    height: 100%; /* Each item will take 100% height of its grid cell */
+    border: 3px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hints {
+    margin-bottom: 20px;
+}
+
+#resultMessage {
+    font-weight: bold;
+}
+
+/* Add styles for color and symbol selection */
+.color-selector {
+    margin-bottom: 10px;
+}
+
+.symbol-selector {
+    display: flex;
+    justify-content: center;
+}
+
+.symbol-option {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: transparent;
+}
+
+.square {
+    background-color: transparent;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+/* Add this for grid rows */
+.grid-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    width: 150px; /* Set the width to accommodate 3 items in a row */
+	
+}
+
+.selected {
+    background-color: #343434; /* Change this to the color you want */
+}
