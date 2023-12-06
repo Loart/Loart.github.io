@@ -15,7 +15,7 @@ async function fetchGPT4Response(message) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `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`
+            'Authorization': `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`
         },
         body: JSON.stringify({
             prompt: message,
