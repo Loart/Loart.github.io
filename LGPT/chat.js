@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = 'API_KEY';
+const OPENAI_API_KEY = "API_KEY";
 let currentChatId = null;
 const chats = {};
 const messageContainer = document.getElementById('messageContainer');
