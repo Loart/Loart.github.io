@@ -1,0 +1,44 @@
+name: Build and Deploy
+
+# This specifies that the workflow will run on every push to the main branch.
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build_and_deploy:
+    # This workflow runs on the latest Ubuntu virtual environment.
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks out your repository under $GITHUB_WORKSPACE, so the job can access it.
+    - uses: actions/checkout@v2
+
+    # Sets up a specific version of Node.js environment.
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # Specify the version of Node.js you want to use.
+
+    # Install dependencies.
+    - name: Install dependencies
+      run: npm install
+
+    # Build the project. Replace this with your build script.
+    - name: Build project
+      run: npm run build
+
+    # Replace the API key placeholder in the built files.
+    # Ensure that the path to your built files is correctly specified.
+    - name: Replace API key placeholder
+      run: |
+        sed -i 's/API_KEY/${{ secrets.API_KEY }}/g' path/to/your/built/files
+
+    # Add additional steps for deployment if necessary.
+    # For example, if deploying to GitHub Pages, you might use a specific action for that.
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: build # The folder the action should deploy.
+        # Other deployment configurations go here.
