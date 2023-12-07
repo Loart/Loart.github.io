@@ -11,13 +11,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16' # Specify Node.js 16
+  #  - name: Set up Node.js
+  #    uses: actions/setup-node@v2
+  #    with:
+  #      node-version: '16' # Specify Node.js 16
 
-    - name: Build project
-      run: npm run build
+  #  - name: Build project
+  #    run: npm run build
 
     # Replace the API key placeholder in the built files.
     # Ensure that the path to your built files is correctly specified.
