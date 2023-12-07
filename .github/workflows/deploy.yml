@@ -37,7 +37,7 @@ jobs:
     # Add additional steps for deployment if necessary.
     # For example, if deploying to GitHub Pages, you might use a specific action for that.
     - name: Deploy
-      uses: Loart/github-pages-deploy-action@4.1.4
+      uses: Loart/Loart.github.io
       with:
         branch: gh-pages # The branch the action should deploy to.
         folder: build # The folder the action should deploy.
