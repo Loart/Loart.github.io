@@ -26,7 +26,7 @@ jobs:
     # Ensure that the path to your built files is correctly specified.
     - name: Replace API key placeholder
       run: |
-        sed -i 's/API_KEY/${{ secrets.API_KEY }}/g' path/to/your/built/files
+        sed -i 's/API_KEY/${{ secrets.API_KEY }}/g' LGPT/chat.js
 
     # Add additional steps for deployment if necessary.
     # For example, if deploying to GitHub Pages, you might use a specific action for that.
