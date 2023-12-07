@@ -1,7 +1,7 @@
 {
   "name": "loart-github-io",
   "version": "1.0.0",
-  "description": "Description of your project",
+  "description": "LGPT",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
