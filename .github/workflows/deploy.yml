@@ -1,30 +1,24 @@
 name: Build and Deploy
 
-# This specifies that the workflow will run on every push to the main branch.
 on:
   push:
     branches: [ main ]
 
 jobs:
   build_and_deploy:
-    # This workflow runs on the latest Ubuntu virtual environment.
     runs-on: ubuntu-latest
 
     steps:
-    # Checks out your repository under $GITHUB_WORKSPACE, so the job can access it.
     - uses: actions/checkout@v2
 
-    # Sets up a specific version of Node.js environment.
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16' # Specify the version of Node.js you want to use.
+        node-version: '16' # Specify Node.js 16
 
-    # Install dependencies.
     - name: Install dependencies
       run: npm install
 
-    # Build the project. Replace this with your build script.
     - name: Build project
       run: npm run build
 
