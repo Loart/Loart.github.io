@@ -1,0 +1,224 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Aeonik', sans-serif;
+    font-size: 13px;
+}
+
+#chatApp {
+    display: flex;
+    height: 100vh;
+}
+
+/* Three Dots Menu Style */
+.three-dots-menu {
+    cursor: pointer;
+    font-size: 20px; /* Adjust as needed */
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.selected-chat {
+    background-color: #343541; /* or any other color you prefer */
+	margin-left: 5px;
+}
+
+#chatList {
+    width: 200px;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    background-color: #000000;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+#currentChat {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: #343541;
+}
+
+#chatListContainer {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+#messageContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+#chatInputContainer {
+    padding: 10px;
+}
+
+#txtMsg {
+    flex-grow: 1;
+    resize: none;
+    background-color: #343541;
+    border: none;
+    padding: 5px;
+    color: #fff;
+}
+
+#btnSend {
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#chatList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    position: relative;
+    height: 100%;
+}
+
+#creditsDisplay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    position: relative; /* For absolute positioning of delete button */
+    cursor: pointer;
+	padding-right: px;
+}
+
+.chat-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* This will add an ellipsis to text that's too long */
+    flex-grow: 1; /* Allow chat name to take up available space */
+	mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+}
+
+
+.chat-item:hover {
+    background-color: #202123;
+    border-radius: 10px;
+}
+
+.delete-button {
+    display: none;
+    position: absolute;
+    right: 100px; /* Place it towards the right */
+    top: 50%;
+    transform: translateY(-50%); /* Center it vertically */
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+.chat-item:hover .delete-button {
+    background-color: transparent;
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: block;
+    position: absolute; /* Position absolute */
+    right: 0; /* Align to the right */
+	margin-right: 5px;
+}
+
+
+
+.message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 12px;
+    color: #000;
+    max-width: 80%;
+    white-space: pre-wrap;
+}
+
+.textarea-container {
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.code-snippet {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+.me-message {
+    background-color: #1a73e8;
+    text-align: left;
+    margin-left: 5px;
+    margin-right: auto;
+}
+
+.chatgpt-message {
+    background-color: #34a853;
+    text-align: right;
+    margin-right: 5px;
+    margin-left: auto;
+}
+
+.typing-animation {
+    border-right: 2px solid;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
