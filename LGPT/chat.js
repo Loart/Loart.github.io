@@ -20,7 +20,7 @@ function generateChatId() {
 
 function generateChatName() {
     // Implement your logic to generate a random name
-    return "Random Chat Name"; // Placeholder
+    return "Random Chat Name"; // Placeholder 2
 }
 
 function createNewChat() {
