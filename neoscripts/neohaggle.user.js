@@ -15,7 +15,7 @@
     let isMenuVisible = false;
 
         // Function to parse and log data
-async function parseAndLogData() {
+    async function parseAndLogData() {
         const textContent = document.body.textContent || document.body.innerText;
         const neopointsRegex = /I accept your offer of (\d+) Neopoints!/;
         const itemRegex = /Haggle for ([^\r\n]+)/;
@@ -115,12 +115,6 @@ function createTable(logs) {
             buttonContainer.style.display = 'flex';
             buttonContainer.style.justifyContent = 'space-between';
             logContainer.appendChild(buttonContainer);
-
-            // Create and add Export to Git button
-            const exportButton = document.createElement('button');
-            exportButton.textContent = 'Send to Spreadsheet';
-            exportButton.onclick = pushLogsToGitHub;
-            buttonContainer.appendChild(exportButton);
 
             // Create and add Clear Logs button
             const clearButton = document.createElement('button');
