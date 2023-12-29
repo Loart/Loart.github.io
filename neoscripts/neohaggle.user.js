@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Neopets Haggle Logger
 // @namespace    Loart
-// @version      0.1
+// @version      1.5
 // @description  Log items being bought.
 // @author       Loart
 // @match        https://www.neopets.com/*
