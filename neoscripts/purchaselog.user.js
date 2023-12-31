@@ -4,7 +4,11 @@
 // @version      1.5
 // @description  Log items being bought.
 // @author       Loart
-// @match        https://www.neopets.com/*
+// @match        https://www.neopets.com/haggle.phtml*
+// @match        https://www.neopets.com/inventory.phtml*
+// @match        https://www.neopets.com/objects.*
+// @match        https://www.neopets.com/market.*
+// @match        https://www.neopets.com/safetydeposit*
 // @grant        GM.setValue
 // @grant        GM.getValue
 // ==/UserScript==
