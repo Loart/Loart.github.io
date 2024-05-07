@@ -1,9 +1,9 @@
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #e0fbfc;
-  color: #001219;
   margin: 0;
   scroll-behavior: smooth;
+  background-color: #e0f4f1;
+  color: #001219;
 }
 
 header {
@@ -40,55 +40,35 @@ main {
   padding-top: 5rem; /* Offset for the fixed header */
 }
 
-.hero-content {
-  background-color: #94d2bd;
-  text-align: center;
-  padding: 8rem 1rem;
-  animation: fadeUp 1.5s ease-in-out;
-}
-
-section {
-  padding: 4rem 2rem;
-  margin: 1rem 0;
-  background-color: #f0f9fa;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-}
-
-h2 {
-  font-family: 'Merriweather', serif;
-}
-
 section {
   display: none; /* Initially hide all sections */
-  opacity: 0; /* Start with sections fully transparent */
-  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  margin: 2rem auto;
+  padding: 4rem 2rem;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 section.active {
-  display: block; /* Display the active section */
-  opacity: 1; /* Make the section fully opaque */
-  padding: 4rem 2rem; /* Standard padding */
+  display: block; /* Display only the active section */
+  opacity: 1;
 }
 
-#about, #contact {
-  background-color: #f0f9fa; /* Light background for alternating sections */
+.hero-content {
+  background-color: #94d2bd;
+  text-align: center;
+}
+
+#about {
+  background-color: #f0f9fa;
 }
 
 #portfolio {
-  background-color: #e0fbfc; /* Different background for another section */
+  background-color: #e0fbfc;
 }
 
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+#contact {
+  background-color: #f0f9fa;
 }
