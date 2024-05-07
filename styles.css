@@ -46,7 +46,8 @@ section {
   transition: opacity 0.5s ease;
   margin: 2rem auto;
   padding: 4rem 2rem;
-  max-width: 800px;
+  max-width: 900px;
+  max-height: 500px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -95,3 +96,40 @@ section.active {
 #portfolio { background-color: #e0fbfc; }
 #contact { background-color: #f0f9fa; }
 #project1 { background-color: #f0f9fa; }
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.description, .code-block {
+  flex: 1; /* Each takes half of the container */
+  margin: 0 10px; /* Adds some space between the two divs */
+}
+
+.code-block {
+  position: relative;
+  width: 60%;
+  max-height: 300px; /* Adjust the maximum height as needed */
+  max-width: 600px;  /* Adjust the width as desired */
+  overflow: auto;    /* Scrolls only if content overflows */
+  font-size: 12px;/* For positioning the button absolutely within this div */
+}
+
+pre {
+  background-color: #f4f4f4; /* Light grey background for the code block */
+  border: 1px solid #ddd; /* Adds a border around the code block */
+  padding: 15px;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  white-space: pre-wrap; /* Keeps indentation and format */
+  word-wrap: break-word; /* Ensures long words do not break the layout */
+}
+
+button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+

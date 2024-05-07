@@ -21,11 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
   showSection('#intro');
 
   // Global event listener to catch clicks on any anchor tags with href starting with #
-  document.body.addEventListener('click', function(event) {
-    if (event.target.tagName === 'A' && event.target.getAttribute('href').startsWith('#')) {
-      event.preventDefault();
-      const sectionId = event.target.getAttribute('href');
-      showSection(sectionId);
-    }
-  });
+document.body.addEventListener('click', function(event) {
+ 
+  let target = event.target;
+  if (target.tagName !== 'A') {
+    target = target.closest('A');
+  }
+  if (target && target.href && target.href.includes('#')) {
+    event.preventDefault();
+    const sectionId = target.getAttribute('href');
+    showSection(sectionId);
+  }
+});
+
 });

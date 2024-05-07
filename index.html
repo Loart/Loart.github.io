@@ -6,6 +6,8 @@
   <title>Loart's Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.26.0/themes/prism.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.26.0/prism.js"></script>
 </head>
 <body>
   <header>
@@ -49,11 +51,19 @@
     </section>
 
 
-    <section id="project1">
-      <a href="#portfolio">Back</a>
-            <h2 class="centered">First project</h2>
-      <p class="centered">This is my first project</p>
-    </section>
+<section id="project1">
+  <a href="#portfolio">Back</a>
+  <h2 class="centered">First Project</h2>
+  <div class="content-container">
+    <div class="description">
+      <p>This is a description of the project. It explains what the project is about and its features.</p>
+    </div>
+    <div class="code-block">
+      <pre><code class="language-javascript" data-src="project1.js"></code></pre>
+      <button onclick="copyCode()">Copy Code</button>
+    </div>
+  </div>
+</section>
 
     <section id="project2">
       <a href="#portfolio">Back</a>
@@ -63,5 +73,7 @@
   </main>
 
   <script src="script.js"></script>
+  <script src="copy.js"></script>
+  <script src="codeload.js"></script>
 </body>
 </html>
