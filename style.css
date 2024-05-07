@@ -1,92 +1,60 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Change this to 100vh to fill the entire height of the viewport */
-    background-color: #f3f3f3;
+  font-family: 'Lato', sans-serif;
+  background-color: #e0fbfc;
+  color: #001219;
+  margin: 0;
 }
 
-.container {
-    text-align: center;
-    display: flex; /* Add this */
-    flex-direction: column; /* Add this */
-    justify-content: center; /* Add this */
-    align-items: center; /* Add this */
-    gap: 20px; /* Add this to create space between elements */
-    width: 100%; /* Add this to take the full width */
-    max-width: 600px; /* Add this to limit the maximum width */
-    padding: 20px; /* Add this to create some space around the elements */
+header {
+  background-color: #005f73;
+  color: #e0fbfc;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
 }
 
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
-    grid-template-rows: repeat(3, 1fr); /* Three rows with equal height */
-    gap: 1px;
-    margin-bottom: 1px;
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
 }
 
-/* Adjust grid item width and height */
-.grid-item {
-    width: 80px; /* Set the width */
-    height: 80px; /* Set the height */
-    border: 3px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Show ellipsis when text overflows */
+nav a {
+  color: #e0fbfc;
+  text-decoration: none;
 }
 
-.hints {
-    margin-bottom: 20px;
+main {
+  padding-top: 5rem; /* Offset for fixed header */
 }
 
-#resultMessage {
-    font-weight: bold;
+.hero-content {
+  background-color: #94d2bd;
+  text-align: center;
+  padding: 5rem 1rem;
+  animation: fadeUp 1.5s ease-in-out;
 }
 
-/* Add styles for color and symbol selection */
-.color-selector {
-    margin-top: 1px; /* Add this to reduce the space above the color selector */
-    margin-bottom: 1px; /* Adjust this value to reduce the space below the color selector */
+section {
+  padding: 3rem 1rem;
+  margin: 1rem 0;
 }
 
-.symbol-selector {
-    display: flex;
-    justify-content: center;
+h2 {
+  font-family: 'Merriweather', serif;
 }
 
-.symbol-option, .color-btn, .letter-btn {
-    width: 50px; /* Set the width */
-    height: 50px; /* Set the height */
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 50%;
-    border: 1px solid #000;
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Show ellipsis when text overflows */
-}
-
-
-
-
-/* Add this for grid rows */
-.grid-row {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    width: 150px; /* Set the width to accommodate 3 items in a row */
-	
-}
-
-.selected {
-    background-color: #343434; /* Change this to the color you want */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
