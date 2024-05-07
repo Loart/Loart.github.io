@@ -45,7 +45,8 @@ main {
 section {
   display: none; /* Initially hide all sections */
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and transform */
+  transform: translateY(20px); /* Initial state for transform */
   margin: 2rem auto;
   padding: 4rem 2rem;
   max-width: 900px;
@@ -57,6 +58,7 @@ section {
 section.active {
   display: block; /* Display only the active section */
   opacity: 1;
+  transform: translateY(0); /* Target state for transform */
 }
 
 .centered {
@@ -68,36 +70,34 @@ section.active {
   justify-content: center;
   text-align: center;
   flex-wrap: wrap;
-  gap: 20px; /* Adds space between each project */
+  gap: 20px;
 }
 
 .project-item {
-  width: 200px; /* Adjust size as needed */
-  height: 200px; /* Makes the item square */
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the background image */
-  position: relative; /* Needed for positioning text over the image */
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
   display: flex;
-  align-items: center; /* Centers the text vertically */
-  justify-content: center; /* Centers the text horizontally */
-  color: white; /* Text color */
-  text-decoration: none; /* Removes underline from links */
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
 }
 
 .project-text {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text */
-  padding: 10px 20px; /* Padding around the text */
-  border-radius: 8px; /* Rounded corners for the text background */
-  text-align: center; /* Ensures the text is centered */
-  font-weight: 700; /* Makes the text bold */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
 }
 
-/* Example backgrounds for differentiation */
+/* Section-specific background colors */
 .hero-content { background-color: #94d2bd; }
-#about { background-color: #f0f9fa; }
+#about, #contact, #project1, #project2, #project3, #project4 { background-color: #f0f9fa; }
 #portfolio { background-color: #e0fbfc; }
-#contact { background-color: #f0f9fa; }
-#project1 { background-color: #f0f9fa; }
 
 .content-container {
   display: flex;
@@ -106,26 +106,26 @@ section.active {
 }
 
 .description, .code-block {
-  flex: 1; /* Each takes half of the container */
-  margin: 0 10px; /* Adds some space between the two divs */
+  flex: 1;
+  margin: 0 10px;
 }
 
 .code-block {
   position: relative;
   width: 60%;
-  max-height: 300px; /* Adjust the maximum height as needed */
-  max-width: 600px;  /* Adjust the width as desired */
-  overflow: auto;    /* Scrolls only if content overflows */
-  font-size: 12px;/* For positioning the button absolutely within this div */
+  max-height: 300px;
+  max-width: 600px;
+  overflow: auto;
+  font-size: 12px;
 }
 
 pre {
-  background-color: #f4f4f4; /* Light grey background for the code block */
-  border: 1px solid #ddd; /* Adds a border around the code block */
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
   padding: 15px;
-  overflow-x: auto; /* Allows horizontal scrolling */
-  white-space: pre-wrap; /* Keeps indentation and format */
-  word-wrap: break-word; /* Ensures long words do not break the layout */
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 button {
@@ -133,5 +133,3 @@ button {
   top: 5px;
   right: 5px;
 }
-
-
