@@ -62,6 +62,16 @@ h2 {
   font-family: 'Merriweather', serif;
 }
 
+section {
+  display: none;
+  transition: opacity 0.5s;
+}
+
+section.active {
+  display: block;
+  opacity: 1;
+}
+
 @keyframes fadeUp {
   0% {
     opacity: 0;
