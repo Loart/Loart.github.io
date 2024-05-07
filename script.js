@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function hideAllSections() {
     sections.forEach(section => {
-      section.style.display = 'none';
-      section.classList.remove('active');
+      section.style.display = 'none'; // Hide the section
+      section.classList.remove('active'); // Remove active class to start transition
     });
   }
 
@@ -12,26 +12,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetSection = document.querySelector(sectionId);
     if (targetSection) {
       hideAllSections();
-      targetSection.style.display = 'block';
-      targetSection.classList.add('active');
+      // Set a slight delay to ensure the 'display: none' from other sections is applied first
+      setTimeout(() => {
+        targetSection.style.display = 'block'; // Display the section
+        // Set another timeout to allow the browser to render 'display: block' before adding 'active'
+        setTimeout(() => {
+          targetSection.classList.add('active'); // Add active class to start the transition
+        }, 20);
+      }, 20);
     }
   }
 
   // Initialize with the intro section visible
   showSection('#intro');
 
-  // Global event listener to catch clicks on any anchor tags with href starting with #
-document.body.addEventListener('click', function(event) {
- 
-  let target = event.target;
-  if (target.tagName !== 'A') {
-    target = target.closest('A');
-  }
-  if (target && target.href && target.href.includes('#')) {
-    event.preventDefault();
-    const sectionId = target.getAttribute('href');
-    showSection(sectionId);
-  }
-});
+  document.body.addEventListener('click', function(event) {
+    let target = event.target;
+    if (target.tagName !== 'A') {
+      target = target.closest('A');
+    }
+    if (target && target.href && target.href.includes('#')) {
+      event.preventDefault();
+      const sectionId = target.getAttribute('href');
+      showSection(sectionId);
+    }
+  });
 
 });
