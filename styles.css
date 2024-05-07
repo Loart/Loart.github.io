@@ -62,3 +62,32 @@ section.active {
 #portfolio { background-color: #e0fbfc; }
 #contact { background-color: #f0f9fa; }
 #project1 { background-color: #f0f9fa; }
+
+/* Container to position the back button */
+.top-left {
+  position: absolute; /* Position relative to the closest parent with a non-static position */
+  top: 0;
+  left: 0;
+  margin: 1rem; /* Adjust the margin to control the button's exact placement */
+}
+
+/* Adjust the containing section to ensure the button aligns correctly */
+#project1 {
+  position: relative; /* Ensures child elements are positioned relative to this section */
+}
+
+/* Styling for the back button itself */
+.back-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #005f73;
+  color: #e0fbfc;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #94d2bd;
+}
+
