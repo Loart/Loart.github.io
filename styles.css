@@ -65,17 +65,13 @@ h2 {
 section {
   display: none; /* Initially hide all sections */
   opacity: 0; /* Start with sections fully transparent */
-  height: 0; /* Collapse sections */
-  overflow: hidden;
-  transition: opacity 0.5s, height 0.5s ease;
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
 }
 
 section.active {
-  display: block; /* Only display the active section */
-  opacity: 1;
-  height: auto; /* Allow the section to expand to its natural height */
-  padding: 4rem 2rem; /* Add padding when active */
-  transition: opacity 0.5s ease 0.5s, height 0.5s ease; /* Delay opacity to after height transitions */
+  display: block; /* Display the active section */
+  opacity: 1; /* Make the section fully opaque */
+  padding: 4rem 2rem; /* Standard padding */
 }
 
 #about, #contact {
