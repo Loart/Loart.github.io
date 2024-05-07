@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Neopets Haggle Logger
+// @name         Neopets Shop Purchase Tracker
 // @namespace    Loart
 // @version      1.5
 // @description  Log items being bought.
