@@ -133,3 +133,40 @@ button {
   top: 5px;
   right: 5px;
 }
+
+.photo-nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.photo-nav li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.photo-nav a {
+    text-decoration: none;
+    color: #005f73;
+    font-weight: bold;
+}
+
+.photo-nav a:hover {
+    color: #94d2bd;
+}
+
+.gallery-item {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery-item.active {
+    display: block;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
