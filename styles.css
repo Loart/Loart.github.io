@@ -56,23 +56,9 @@ section.active {
   opacity: 1;
 }
 
-.hero-content {
-  background-color: #94d2bd;
-  text-align: center;
-}
-
-#about {
-  background-color: #f0f9fa;
-}
-
-#portfolio {
-  background-color: #e0fbfc;
-}
-
-#contact {
-  background-color: #f0f9fa;
-}
-
-#project1 {
-  background-color: #f0f9fa;
-}
+/* Example backgrounds for differentiation */
+.hero-content { background-color: #94d2bd; }
+#about { background-color: #f0f9fa; }
+#portfolio { background-color: #e0fbfc; }
+#contact { background-color: #f0f9fa; }
+#project1 { background-color: #f0f9fa; }
