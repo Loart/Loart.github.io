@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Initialize the page by showing the first section by default
-  showSection('#intro'); // Adjust this if you want a different initial section
+  // Initialize the page by showing the intro section by default
+  showSection('#intro');
 
   // Add click events to navigation links
   navLinks.forEach(link => {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const sectionId = this.getAttribute('href');
       showSection(sectionId);
-      window.scrollTo({ // Optional: scroll to top of the page or targeted section
+      window.scrollTo({ // Optional: scroll to the top of the page or to the targeted section
         top: 0,
         behavior: 'smooth'
       });
