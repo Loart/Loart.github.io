@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a[href^="#"], #portfolio a[href^="#"]'); // Select links in the nav and portfolio
+  const navLinks = document.querySelectorAll('nav a[href^="#"], #portfolio a[href^="#"], #project1 a[href^="#"]'); // Select links in the nav and portfolio
 
   function hideAllSections() {
     sections.forEach(section => {
