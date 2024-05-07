@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function hideAllSections() {
     sections.forEach(section => {
       section.classList.remove('active');
-      section.style.display = 'none'; // Explicitly hide sections
     });
   }
 
@@ -14,17 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (targetSection) {
       hideAllSections();
       targetSection.classList.add('active');
-      targetSection.style.display = 'block'; // Explicitly show section
     }
   }
 
-  // Initialize with the intro section visible
+  // Show the first section by default
   showSection('#intro');
 
+  // Add click events to navigation links
   navLinks.forEach(link => {
     link.addEventListener('click', function (event) {
       event.preventDefault();
-      showSection(this.getAttribute('href'));
+      const sectionId = this.getAttribute('href');
+      showSection(sectionId);
     });
   });
 });
