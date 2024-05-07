@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to hide all sections
   function hideAllSections() {
     sections.forEach(section => {
-      section.style.display = 'none';
       section.classList.remove('active');
     });
   }
@@ -14,16 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function showSection(sectionId) {
     const targetSection = document.querySelector(sectionId);
     if (targetSection) {
-      hideAllSections();
-      targetSection.style.display = 'block';
-      targetSection.classList.add('active');
+      hideAllSections(); // Ensure all other sections are hidden
+      targetSection.classList.add('active'); // Display the targeted section
     }
   }
 
   // Initialize the page by showing the first section by default
-  if (sections.length > 0) {
-    showSection('#intro');
-  }
+  showSection('#intro'); // Adjust this if you want a different initial section
 
   // Add click events to navigation links
   navLinks.forEach(link => {
@@ -31,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const sectionId = this.getAttribute('href');
       showSection(sectionId);
+      window.scrollTo({ // Optional: scroll to top of the page or targeted section
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   });
 });
