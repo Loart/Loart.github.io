@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const main = document.querySelector('main'); // Delegate from the main element
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a[href^="#"], #portfolio a[href^="#"], #project1 a[href^="#"]');
 
   function hideAllSections() {
-    document.querySelectorAll('section').forEach(section => {
+    sections.forEach(section => {
       section.style.display = 'none';
       section.classList.remove('active');
     });
@@ -20,12 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize with the intro section visible
   showSection('#intro');
 
-  main.addEventListener('click', function (event) {
-    const target = event.target;
-    if (target.tagName === 'A' && target.getAttribute('href').startsWith('#')) {
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
       event.preventDefault(); // Prevent the default behavior of navigation
-      const sectionId = target.getAttribute('href');
+      const sectionId = this.getAttribute('href');
       showSection(sectionId);
-    }
+    });
   });
 });
