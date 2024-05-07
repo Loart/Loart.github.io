@@ -3,15 +3,17 @@ body {
   background-color: #e0fbfc;
   color: #001219;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 header {
   background-color: #005f73;
   color: #e0fbfc;
-  padding: 1rem;
+  padding: 1rem 2rem;
   position: fixed;
   width: 100%;
   top: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
 
@@ -26,22 +28,34 @@ nav ul {
 nav a {
   color: #e0fbfc;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #94d2bd;
 }
 
 main {
-  padding-top: 5rem; /* Offset for fixed header */
+  padding-top: 5rem; /* Offset for the fixed header */
 }
 
 .hero-content {
   background-color: #94d2bd;
   text-align: center;
-  padding: 5rem 1rem;
+  padding: 8rem 1rem;
   animation: fadeUp 1.5s ease-in-out;
 }
 
 section {
-  padding: 3rem 1rem;
+  padding: 4rem 2rem;
   margin: 1rem 0;
+  background-color: #f0f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
 }
 
 h2 {
