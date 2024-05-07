@@ -63,14 +63,28 @@ h2 {
 }
 
 section {
-  display: none;
-  transition: opacity 0.5s;
+  display: none; /* Initially hide all sections */
+  transition: opacity 0.5s, height 0.5s ease;
+  opacity: 0; /* Start with sections hidden */
+  height: 0; /* Collapse sections */
+  overflow: hidden;
 }
 
 section.active {
-  display: block;
+  display: block; /* Only display the active section */
   opacity: 1;
+  height: auto; /* Allow the section to expand to its natural height */
+  padding: 4rem 2rem; /* Add padding when active */
 }
+
+#about, #contact {
+  background-color: #f0f9fa; /* Light background for alternating sections */
+}
+
+#portfolio {
+  background-color: #e0fbfc; /* Different background for another section */
+}
+
 
 @keyframes fadeUp {
   0% {
