@@ -60,13 +60,31 @@ section.active {
   text-align: center;
 }
 
-#portfolio ul {
-  list-style-type: disc; 
-  list-style-position: inside; 
-  text-align: center; 
-  padding: 0;
-  margin: 0 auto; 
-  width: fit-content;
+.projects-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds space between each project */
+}
+
+.project-item {
+  width: 200px; /* Adjust size as needed */
+  height: 200px; /* Makes the item square */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the background image */
+  position: relative; /* Needed for positioning text over the image */
+  display: flex;
+  align-items: center; /* Centers the text vertically */
+  justify-content: center; /* Centers the text horizontally */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline from links */
+}
+
+.project-text {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text */
+  padding: 10px 20px; /* Padding around the text */
+  border-radius: 8px; /* Rounded corners for the text background */
+  text-align: center; /* Ensures the text is centered */
 }
 
 /* Example backgrounds for differentiation */
