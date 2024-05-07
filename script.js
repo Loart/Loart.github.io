@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"], #portfolio a[href^="#"]');
 
   function hideAllSections() {
     sections.forEach(section => {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Show the first section by default
   showSection('#intro');
 
-  // Add click events to navigation links
+  // Add click events to all links that should toggle sections
   navLinks.forEach(link => {
     link.addEventListener('click', function (event) {
       event.preventDefault();
