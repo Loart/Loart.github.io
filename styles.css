@@ -56,6 +56,10 @@ section.active {
   opacity: 1;
 }
 
+.centered {
+  text-align: center;
+}
+
 /* Example backgrounds for differentiation */
 .hero-content { background-color: #94d2bd; }
 #about { background-color: #f0f9fa; }
