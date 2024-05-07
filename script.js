@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section');
+  // Add the 'back-button' class links to the selection
   const navLinks = document.querySelectorAll('nav a[href^="#"], #portfolio a[href^="#"], #project1 a[href^="#"]');
 
   function hideAllSections() {
